@@ -1,0 +1,21 @@
+{
+  "name": "atividade_unidade_14",
+  "version": "1.0.0",
+  "description": "Você foi contratado(a) como Engenheiro(a) de QA em um e-commerce. A suíte de testes legada de login possui seletores CSS espalhados em vários arquivos de teste, gerando um custo alto de manutenção sempre que o time de frontend altera o layout ou as classes. Sua missão é profissionalizar a automação de testes da LojaQA aplicando o padrão Page Object Model, Fixtures e Data-Driven.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigobassman/Atividade_Unidade_14.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rodrigobassman/Atividade_Unidade_14/issues"
+  },
+  "homepage": "https://github.com/rodrigobassman/Atividade_Unidade_14#readme"
+}
