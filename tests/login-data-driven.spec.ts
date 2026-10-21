@@ -31,8 +31,10 @@ test.describe('Testes Data-Driven de Login', () => {
             await loginPage.login(cenario.email, cenario.senha);
 
             if (cenario.sucessoEsperado) {
-                // Imprime a URL real para conferirmos
-                console.log(`URL atual (${cenario.nome}):`, page.url());
+                // Imprime a URL real no terminal para sabermos onde o cliente foi parar
+                console.log(`URL final para ${cenario.nome}: ${page.url()}`);
+                
+                // Validação genérica temporária de sucesso (qualquer página que não seja o login)
                 await expect(page).not.toHaveURL(/login\.html/);
             } else {
                 await expect(loginPage.errorMessage).toBeVisible();
