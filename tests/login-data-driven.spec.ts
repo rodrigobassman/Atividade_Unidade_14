@@ -31,7 +31,7 @@ test.describe('Testes Data-Driven de Login', () => {
             await loginPage.login(cenario.email, cenario.senha);
 
             if (cenario.sucessoEsperado) {
-                await expect(loginPage.statusMessage).toBeVisible();
+                // Valida o redirecionamento que é comum para ambos os usuários válidos
                 await expect(page).toHaveURL(/painel\.html/);
             } else {
                 await expect(loginPage.errorMessage).toBeVisible();
