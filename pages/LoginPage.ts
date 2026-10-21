@@ -1,47 +1,30 @@
-import {Page, Locator} from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 export class LoginPage {
-    // Locators
+    readonly page: Page;
     readonly emailInput: Locator;
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
     readonly errorMessage: Locator;
     readonly statusMessage: Locator;
-    readonly credentialsBox: Locator;
 
-    constructor(private page: Page) {
+    constructor(page: Page) {
+        this.page = page;
         this.emailInput = page.locator('#email');
         this.passwordInput = page.locator('#password');
         this.loginButton = page.locator('#loginBtn');
-        this.errorMessage = page.locator('#errorMessage');
-        this.statusMessage = page.locator('#statusMessage');
-        this.credentialsBox = page.locator('.credentials-info');
+        this.errorMessage = page.locator('.error-message');
+        this.statusMessage = page.locator('.status-message');
     }
 
-    // navegar para tela de login
     async goto() {
-        await this.page.goto('https://alisonmelo.github.io/tioalison-pe-t4-fap26/projetos-base/01-sistema-login/login.html');
+        // Vai navegar para: https://alisonmelo.github.io/.../login.html
+        await this.page.goto('login.html');
     }
 
-    // função/método/Ação de login
-    async login(username: string, password: string) {
-        await this.emailInput.fill(username);
-        await this.passwordInput.fill(password);
-        await this.loginButton.click();
-    }
-
-    // apenas preencher email
-    async fillEmail(email: string) {
+    async login(email: string, pass: string) {
         await this.emailInput.fill(email);
-    }
-
-    // apenas preencher senha
-    async fillPassword(password: string) {
-        await this.passwordInput.fill(password);
-    }
-
-    // apenas clicar no bt de login
-    async clickSubmit() {
+        await this.passwordInput.fill(pass);
         await this.loginButton.click();
     }
 }
