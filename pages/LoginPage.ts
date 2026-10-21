@@ -14,7 +14,7 @@ export class LoginPage {
         this.passwordInput = page.locator('#password');
         this.loginButton = page.locator('#loginBtn');
         this.errorMessage = page.locator('.error-message');
-        this.statusMessage = page.locator('.status-message');
+        this.statusMessage = page.locator('#statusMessage');
     }
 
     async goto() {
